@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Library</title>
+    </head>
+    <body>
+        <header>
+            <h1>Library</h1>
+        </header>
+        <main>
+            <button id="add-book">+ Add Book</button>
+            <div id="hidden">
+                <div class="form-container">
+                <form action="#" method="get">
+                    <h3>Add new book</h3>
+                <div class="inputs">
+                    <input type="text" id="title" placeholder="Title" required>
+                    <input type="text" id="author" placeholder="Author" required>
+                    <input type="number" id="pages" placeholder="Pages" required>
+                </div> 
+                <div class="radio-btn">
+                    <label for="radio-btn">Have your read the book?</label>
+                    <label><input type="radio" name="read-status" value="yes" checked> Yes</label>
+                    <label><input type="radio" name="read-status" value="no"> No</label>
+                </div>
+                <div class="submit">
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </form>
+            </div>
+            </div>
+            <div id="books-container"></div>
+        </main>
+        <footer>
+            <p id="footer-txt">Copyright © 2025 Morgenstund | <a href="https://github.com/Morgenstund5"><i id="github-icon" class="fa-brands fa-github"></i></a></p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
+
+<!-- 
+    <div class="books-container">
+                <div class="book-div">
+                    <ul class="book-items">
+                        <li>
+                            <h3>Title</h3>
+                        </li>
+                        <li>Author</li>
+                        <li># pages</li>
+                    </ul>
+                    <button class="read-btn">Read</button>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+-->
