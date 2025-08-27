@@ -1,0 +1,142 @@
+body {
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* stack header, main, footer */
+    min-height: 100vh;
+  }
+  header, footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+
+  footer {
+    margin-top: auto;
+  }
+
+  nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    margin: 0 0.5em;
+    cursor: pointer;
+  }
+  main {
+    max-width: 1000px;
+    margin: 2em auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+  }
+
+  .books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+  }
+  .book {
+    border: 1px solid #ddd;
+    padding: 1em;
+    background: white;
+    border-radius: 6px;
+    text-align: center; /* center all content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .book h3 {
+    margin: 0 0 0.5em;
+    font-family: "Georgia", serif;
+  }
+  .book p {
+    margin: 0.3em 0;
+  }
+  .actions {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: 0.5em;
+  }
+  #addBook {
+    display: block;
+    margin: 2em auto;
+    padding: 0.6em 1.2em;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #f4f4f4;
+    cursor: pointer;
+  }
+
+  /* add book form */ 
+
+  #bookFormContainer {
+    display: block; /* hidden until triggered */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  #bookForm {
+    background: white;
+    padding: 2em;
+    border-radius: 8px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+  }
+
+  #bookForm h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #bookForm label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+  }
+
+  #bookForm input,
+  #bookForm select {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.3em;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-actions button {
+    padding: 0.5em 1em;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #f4f4f4;
+    cursor: pointer;
+  }
