@@ -13,7 +13,7 @@ function Book(title, author, year, pages, read) {
 
 function displayBooks(array) {
     const booksDiv = document.querySelector(".books");
-    booksDiv.innerHTML = (array.length < 1) ? 
+    booksDiv.innerHTML = array.length < 1 ? 
                         `<p>No books in your Library!</p>` 
                         : `${array.map((book => {
                             return `
@@ -73,38 +73,46 @@ function displayBooks(array) {
     function editBook(bookIndex) {
         const addBookForm = document.createElement("div")
     addBookForm.id = "bookFormContainer"
-    addBookForm.innerHTML = `
-        <form id="bookForm">
-            <h3>Edit book info</h3>
-            <label>
-            Title:
-            <input type="text" name="title" value="${bookIndex.title}" required>
-            </label>
-            <label>
-            Author:
-            <input type="text" name="author" value="${bookIndex.author}"required>
-            </label>
-            <label>
-            Year:
-            <input type="number" name="year" value="${bookIndex.year}" required>
-            </label>
-            <label>
-            Pages:
-            <input type="number" name="pages" value="${bookIndex.pages}" required>
-            </label>
-            <label>
-            Read:
+
+    const bookForm = document.createElement("form")
+    bookForm.classList = "bookForm"
+
+    const formTitle = document.createElement("h3");
+    formTitle.innerText = "Edit book info";
+    bookForm.appendChild(formTitle);
+
+    const titleLabel = document.createElement("label")
+    titleLabel.innerHTML = `Title:
+            <input type="text" name="title" value="${bookIndex.title}" required>`
+    bookForm.appendChild(titleLabel);
+    
+    const authorLabel = document.createElement("label")
+    authorLabel.innerHTML = `Author:
+            <input type="text" name="author" value="${bookIndex.author}"required>`
+    bookForm.appendChild(authorLabel);
+
+    const yearLabel = document.createElement("label")
+    yearLabel.innerHTML = `Year:
+            <input type="number" name="year" value="${bookIndex.year}" required>`;
+    bookForm.appendChild(yearLabel);
+    
+    const pagesLabel = document.createElement("label");
+    pagesLabel.innerHTML = `Pages:
+            <input type="number" name="pages" value="${bookIndex.pages}" required>`;
+    bookForm.appendChild(pagesLabel);
+
+    const readLabel = document.createElement("label");
+    readLabel.innerHTML = `Read:
             <select name="read">
                 <option value="not read">Not Read</option>
                 <option value="read">Read</option>
-            </select>
-            </label>
-            <div class="form-actions">
-            <button type="submit" id="confirmEditBtn">Confirm</button>
-            <button type="button" id="cancelForm">Cancel</button>
-            </div>
-        </form>
-    `
+            </select>`;
+    bookForm.appendChild(readLabel);
+
+    const actionsDiv = document.createElement("div");
+    actionsDiv.classList = "form-actions";
+    actionsDiv.innerHTML = `<button type="submit" id="confirmEditBtn">Confirm</button>
+                            <button type="button" id="cancelForm">Cancel</button>`
 
     const main = document.querySelector(".main")
 
